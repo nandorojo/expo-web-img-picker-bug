@@ -1,0 +1,12 @@
+{
+  "name": "img-picker-bug",
+  "displayName": "img-picker-bug",
+  "expo": {
+    "name": "img-picker-bug",
+    "slug": "img-picker-bug",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
