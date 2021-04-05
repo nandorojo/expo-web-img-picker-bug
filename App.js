@@ -1,21 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Button, Text, View } from "react-native";
+import * as ImagePicker from "expo-image-picker";
 
 export default function App() {
+  let openImagePickerAsync = async () => {
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    alert(JSON.stringify(pickerResult));
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Import a photo; notice it always returns cancelled: true.</Text>
+      <Button title="Pick Photo" onPress={openImagePickerAsync} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
